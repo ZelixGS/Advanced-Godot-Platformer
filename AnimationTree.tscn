@@ -1,0 +1,551 @@
+[gd_scene load_steps=53 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "Crawl"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "Crouch"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Fall"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Jump_Mid"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "Jump_Rise"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "Land"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "LedgeClimb"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "LedgeGrab"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Run"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "Slide"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=57]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=58]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=59]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=60]
+
+[sub_resource type="AnimationNodeStateMachine" id=9]
+states/Crawl/node = SubResource( 37 )
+states/Crawl/position = Vector2( 441, -68.7135 )
+states/Crouch/node = SubResource( 38 )
+states/Crouch/position = Vector2( 246, -68.7135 )
+states/Fall/node = SubResource( 20 )
+states/Fall/position = Vector2( 9.01215, -291.791 )
+states/Idle/node = SubResource( 5 )
+states/Idle/position = Vector2( 246, 54 )
+states/Jump_Mid/node = SubResource( 21 )
+states/Jump_Mid/position = Vector2( 9.01215, -61.314 )
+states/Jump_Rise/node = SubResource( 22 )
+states/Jump_Rise/position = Vector2( 9.01215, 54 )
+states/Land/node = SubResource( 23 )
+states/Land/position = Vector2( 246, -188.314 )
+states/LedgeClimb/node = SubResource( 39 )
+states/LedgeClimb/position = Vector2( -205.598, 199 )
+states/LedgeGrab/node = SubResource( 40 )
+states/LedgeGrab/position = Vector2( -205.598, -61.314 )
+states/Run/node = SubResource( 6 )
+states/Run/position = Vector2( 441, 54 )
+states/Slide/node = SubResource( 41 )
+states/Slide/position = Vector2( 441, -291.791 )
+transitions = [ "Idle", "Jump_Rise", SubResource( 24 ), "Jump_Rise", "Jump_Mid", SubResource( 25 ), "Jump_Mid", "Fall", SubResource( 26 ), "Fall", "Land", SubResource( 27 ), "Land", "Idle", SubResource( 28 ), "Land", "Run", SubResource( 29 ), "Idle", "Run", SubResource( 30 ), "Fall", "LedgeGrab", SubResource( 42 ), "LedgeGrab", "LedgeClimb", SubResource( 43 ), "LedgeClimb", "Idle", SubResource( 44 ), "Fall", "Slide", SubResource( 45 ), "Run", "Slide", SubResource( 46 ), "Fall", "Crouch", SubResource( 47 ), "Idle", "Crouch", SubResource( 48 ), "Run", "Crouch", SubResource( 49 ), "Crouch", "Crawl", SubResource( 50 ), "Crawl", "Run", SubResource( 51 ), "Crawl", "Idle", SubResource( 52 ), "LedgeGrab", "Fall", SubResource( 53 ), "LedgeGrab", "Jump_Rise", SubResource( 54 ), "Run", "Idle", SubResource( 56 ), "Crouch", "Idle", SubResource( 57 ), "Crawl", "Crouch", SubResource( 58 ), "Run", "Crawl", SubResource( 59 ), "Land", "Crouch", SubResource( 60 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -580.225, 53.8717 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+
+[sub_resource type="Animation" id=31]
+resource_name = "Crawl"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 140, 141, 142, 143, 144, 145, 146, 147 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "Crouch"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 126, 127, 128, 129, 130, 131 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Fall"
+length = 0.05
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 84 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Facing/Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 15, 16, 17, 18, 19, 20 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Facing/Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Jump_Mid"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 70 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "Jump_Rise"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 56 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Facing/Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Land"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 98, 99 ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "LedgeClimb"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 210, 211, 212, 213, 214, 215, 216, 217 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Facing/Sprite2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Facing/Sprite2:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16, 40 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Facing/Sprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Facing/Sprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Facing/Sprite:offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "LedgeGrab"
+length = 0.05
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 196 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Facing/Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Facing/Sprite2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 196 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Facing/Sprite2:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 8 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 14 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Facing/Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Facing/Sprite2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 211 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Facing/Sprite2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Facing/Sprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Run"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 42, 43, 44, 45, 46, 47, 48, 49 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "RunToIdle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 28, 29 ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "Slide"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 182, 183, 184, 185 ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "Wallslide"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Facing/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 225, 226, 227, 228, 229 ]
+}
+
+[node name="AnimationTree" type="AnimationTree"]
+tree_root = SubResource( 9 )
+anim_player = NodePath("AnimationPlayer")
+parameters/playback = SubResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+anims/Crawl = SubResource( 31 )
+anims/Crouch = SubResource( 32 )
+anims/Fall = SubResource( 16 )
+anims/Idle = SubResource( 3 )
+anims/Jump_Mid = SubResource( 17 )
+anims/Jump_Rise = SubResource( 18 )
+anims/Land = SubResource( 19 )
+anims/LedgeClimb = SubResource( 33 )
+anims/LedgeGrab = SubResource( 34 )
+anims/RESET = SubResource( 55 )
+anims/Run = SubResource( 4 )
+anims/RunToIdle = SubResource( 12 )
+anims/Slide = SubResource( 35 )
+anims/Wallslide = SubResource( 36 )
