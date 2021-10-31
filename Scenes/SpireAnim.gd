@@ -22,14 +22,21 @@ func _process(_delta: float) -> void:
 		player.POWERSLIDE:
 			play("Slide")
 		player.JUMP:
-			play("Jump")
-		player.SPINJUMP:
-			if animation != "Jump_Spinning":
-				play("Jump_Intro_Spin")
-				yield(self, "animation_finished")
-			play("Jump_Spinning")
+			if abs(player.velocity.x) >= player.move_speed/2:
+				if animation != "Jump_Spinning":
+					if player.detect_walljump():
+						play("Walljump")
+						yield(self, "animation_finished")
+					play("Jump_Intro_Spin")
+					yield(self, "animation_finished")
+				play("Jump_Spinning")
+			else:
+				play("Jump")
 		player.FALL:
 			if animation == "Jump_Spinning":
+				if player.detect_walljump():
+					play("Walljump")
+					yield(self, "animation_finished")
 				play("Jump_Spinning")
 			else:
 				play("Fall")

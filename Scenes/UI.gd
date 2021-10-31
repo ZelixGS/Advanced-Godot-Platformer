@@ -8,9 +8,9 @@ func _process(_delta: float):
 #	if player.state != player.previous_state:
 #		print(state_to_string(player.state))
 	debug_text.text = str("FPS: %s" % [Engine.get_frames_per_second()])
-	debug_text.text += str("\nInput: %s" % [G.poll_input()])
+	debug_text.text += str("\nInput: %s" % [G.get_input()])
 	debug_text.text += str("\nPosition: %.1f/%.1f" % [player.position.x, player.position.y])
-	debug_text.text += str("\nVelocity: %.1f/%s, %.1f" % [abs(player.velocity.x),player.get_max_speed(),player.velocity.y])
+	debug_text.text += str("\nVelocity: %.1f/%s, %.1f" % [player.velocity.x,player.get_max_speed(),player.velocity.y])
 	debug_text.text += str("\nCeiling: %s" % [player.detect_ceiling()])
 	debug_text.text += str("\nWall: %s" % [player.is_on_wall()])
 	debug_text.text += str("\nFloor: %s" % [player.is_on_floor()])
@@ -20,6 +20,7 @@ func _process(_delta: float):
 	debug_text.text += str("\nLast State: %s" % [state_to_string(player.previous_state)])
 	debug_text.text += str("\nPower Slide Time: %s" % [player.powerslide_timer.time_left])
 	debug_text.text += str("\nJump Buffer Time: %s" % [player.jump_buffer_timer.time_left])
+	debug_text.text += str("\nCoyate Buffer Time: %s" % [player.jump_coyate_timer.time_left])
 	pass
 
 func state_to_string(value: int) -> String:
@@ -41,8 +42,6 @@ func state_to_string(value: int) -> String:
 			temp = "Sliding"
 		player.CLIMB:
 			temp = "Climbing"
-		player.WALLSLIDE:
-			temp = "Wallsliding"
 		player.LEDGE:
 			temp = "Ledge"
 		player.LEDGECLIMB:
